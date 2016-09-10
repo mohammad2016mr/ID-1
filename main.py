@@ -16,14 +16,14 @@ bot = telebot.TeleBot(config.token)
 def welcome(m):
     cid = m.chat.id
     markup = types.InlineKeyboardMarkup()
-    a = types.InlineKeyboardButton("Taylor Team \xE2\x9C\x8C", url="https://telegram.me/VANDEVOORDE")
+    a = types.InlineKeyboardButton("force bots \xE2\x9C\x8C", url="https://telegram.me/gpsudo")
     c = types.InlineKeyboardButton("Add group \xE2\x9C\x8C", url="https://telegram.me/ID_bot_robot?startgroup=test")
     markup.add(a, c)
-    b = types.InlineKeyboardButton("Developer ID bot \xE2\x9C\x8C", url="https://telegram.me/VANDEVOORDE")
+    b = types.InlineKeyboardButton("Developer ID bot \xE2\x9C\x8C", url="https://telegram.me/gpsudo")
     markup.add(b)
     nn = types.InlineKeyboardButton("Inline Mode", switch_inline_query='')
     markup.add(nn)
-    ret_msg = bot.send_message(cid, "Hello I'm ID bot \n\n Send : \n  /id or /me or /info   \n\n\n get your id : \n /idme (just pv) \nsend Your feedback : /feedback [msg]\n\n\n list inline mod : \ntype @ID_bot_robot\n\nBot version 3", disable_notification=True, reply_markup=markup)
+    ret_msg = bot.send_message(cid, "Hello I'm ID bot \n\n Send : \n  /id or /me or /info   \n\n\n get your id : \n /idme (just pv) \nsend Your feedback : /feedback [msg]\n\n\n list inline mod : \ntype @force_api_bot\n\nBot version 3", disable_notification=True, reply_markup=markup)
     assert ret_msg.message_id
 
 @bot.message_handler(commands=['id', 'ids', 'info', 'me'])
@@ -39,7 +39,7 @@ def id(m):      # info menu
     p = m.pinned_message
     fromm = m.forward_from
     markup = types.InlineKeyboardMarkup()
-    markup.add(types.InlineKeyboardButton("\xF0\x9F\x98\x8A Taylor Team \xF0\x9F\x98\x8A", url="https://telegram.me/forcetg_ch"))
+    markup.add(types.InlineKeyboardButton("\xF0\x9F\x98\x8A force bots \xF0\x9F\x98\x8A", url="https://telegram.me/forcetg_ch"))
 #info text
     bot.send_chat_action(cid, "typing")
     bot.reply_to(m, "*ID from* : ```{}``` \n\n *Chat name* : ```{}``` \n\n\n *Your Username* : ```{}``` \n\n *Your First Name* : ```{}```\n\n *Your Last Name* : ```{}```\n\n *Type From* : ```{}``` \n\n *Msg data* : ```{}```\n\n *Your Msg* : ```{}```\n\n* pind msg * : ```{}```\n\n *from* : ```{}```".format(cid,title,usr,f,l,t,d,text,p,fromm), parse_mode="Markdown", reply_markup=markup)
@@ -48,7 +48,7 @@ def id(m):      # info menu
 def c(m):
     uid = m.chat.id
     bot.send_chat_action(uid, 'typing')
-    bot.send_contact(uid, phone_number="+1 604 900 0732", first_name="VANDEVOORDE")
+    bot.send_contact(uid, phone_number="+1 604 900 0732", first_name="mohammad")
 
 
 @bot.message_handler(commands=['about']) # copy right force Team
@@ -76,15 +76,15 @@ def p(m):
     markup.add(y)
     markup.add(ch, git)
     bot.send_chat_action(uid, 'typing')
-    bot.send_message(uid, "force T development Telegram bot and web mastering \n\n developers : \n [VANDEVOORDE](https://telegram.me/VANDEVOORDE) \n [Parham](https://telegram.me/Developer_Sudo)", parse_mode="Markdown")
+    bot.send_message(uid, "force T development Telegram bot and web mastering \n\n developers : \n [gpsudo](https://telegram.me/VANDEVOORDE) \n [Parham](https://telegram.me/Developer_Sudo)", parse_mode="Markdown")
     bot.send_photo(uid, open('force.jpg'), caption="@forcetg_ch", reply_markup=markup)
 
 @bot.message_handler(commands=['idbot'])
 def handler(m):
     cid = m.chat.id
-    bot.send_message(cid, "My Name is ID bot \n creator and developer : [VANDEVOORDE](https://telegram.me/VANDEVOORDE) \n development channel : [force](https://telegram.me/forcetg_ch)\n\n [github](https://github.com/GSRMOHAMMAD/ID)", parse_mode="Markdown")
+    bot.send_message(cid, "My Name is ID bot \n creator and developer : [gpsudo](https://telegram.me/VANDEVOORDE) \n development channel : [force](https://telegram.me/forcetg_ch)\n\n [github](https://github.com/id)", parse_mode="Markdown")
     bot.send_chat_action(cid, "upload_photo")
-    bot.send_photo(cid, open('slackbot-story1-582x436.jpg'), caption="@ID_BOTR_BOT  \xF0\x9F\x98\x9C")
+    bot.send_photo(cid, open('slackbot-story1-582x436.jpg'), caption="@force_api_bot  \xF0\x9F\x98\x9C")
 
 @bot.message_handler(commands=['idme'])
 def test_handler(m):
